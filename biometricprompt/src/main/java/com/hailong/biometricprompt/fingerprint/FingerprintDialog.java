@@ -128,7 +128,7 @@ public class FingerprintDialog extends DialogFragment {
         super.show(manager, tag);
         if (!isAdded()) {
             FragmentTransaction ft = manager.beginTransaction();
-            ft.add(this, "fragment_name");
+            ft.add(this, tag);
             ft.commit();
         }
     }
