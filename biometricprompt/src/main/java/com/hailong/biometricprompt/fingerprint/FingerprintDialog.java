@@ -1,6 +1,8 @@
 package com.hailong.biometricprompt.fingerprint;
 
 import android.app.DialogFragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
@@ -119,6 +121,16 @@ public class FingerprintDialog extends DialogFragment {
     public void setTip(String tip, @ColorRes int colorId) {
         tvTip.setText(tip);
         tvTip.setTextColor(getResources().getColor(colorId));
+    }
+
+    @Override
+    public void show(FragmentManager manager, String tag) {
+        super.show(manager, tag);
+        if (!isAdded()) {
+            FragmentTransaction ft = manager.beginTransaction();
+            ft.add(this, "fragment_name");
+            ft.commit();
+        }
     }
 
     public interface OnDialogActionListener {
