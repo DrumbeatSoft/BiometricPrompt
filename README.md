@@ -30,7 +30,7 @@
 
 ```
 dependencies {
-        implementation 'com.github.DrumbeatSoft:BiometricPrompt:1.1'
+        implementation 'com.github.DrumbeatSoft:BiometricPrompt:Tag'
 }
 	
 ```
